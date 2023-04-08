@@ -85,9 +85,9 @@ const atualizarTela = () => {
 }
 
 const inserirTarefaA = (evento) => {
-    const tecla = evento.key;
+    const tecla = evento.keyCode || evento.which;
     const texto = evento.target.value;
-    if (tecla === 'Enter') {
+    if (tecla === 13 || tecla === 9) {
         const bancoDadosA = getBancoA();
         bancoDadosA.push ({'tarefa': texto, 'status': ''});
         setBancoA(bancoDadosA);
@@ -97,9 +97,9 @@ const inserirTarefaA = (evento) => {
 }
 
 const inserirTarefaB = (evento) => {
-    const tecla = evento.key;
+    const tecla = evento.keyCode || evento.which;
     const texto = evento.target.value;
-    if (tecla === 'Enter') {
+    if (tecla === 13 || tecla === 9) {
         const bancoDadosB = getBancoB();
         bancoDadosB.push ({'tarefa': texto, 'status': ''});
         setBancoB(bancoDadosB);
@@ -109,9 +109,10 @@ const inserirTarefaB = (evento) => {
 }
 
 const inserirTarefaC = (evento) => {
-    const tecla = evento.key;
+    const tecla = evento.keyCode || evento.which;
     const texto = evento.target.value;
-    if (tecla === 'Enter') {
+    console.log(tecla);
+    if (tecla === 13 || tecla === 9) {
         const bancoDadosC = getBancoC();
         bancoDadosC.push ({'tarefa': texto, 'status': ''});
         setBancoC(bancoDadosC);
@@ -121,9 +122,9 @@ const inserirTarefaC = (evento) => {
 }
 
 //Alimentar banco local e atualizar tela
-document.getElementById('novoA').addEventListener('keypress', inserirTarefaA);
-document.getElementById('novoB').addEventListener('keypress', inserirTarefaB);
-document.getElementById('novoC').addEventListener('keypress', inserirTarefaC);
+document.getElementById('novoA').addEventListener('keydown', inserirTarefaA);
+document.getElementById('novoB').addEventListener('keydown', inserirTarefaB);
+document.getElementById('novoC').addEventListener('keydown', inserirTarefaC);
 
 //Remover o item selecionado
 const removerItemA = (indice) => {
