@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary-color: #e8f7f7;
+    --secondary-color: #0F0F0B;
+    --new-item-color: #f3f3ec;
+    --radius: 10px;
+}
+
+* {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+
+body {
+    font: bold 1rem 'Poppins', sans-serif;
+    background-color: var(--primary-color);
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    font-size: large;
+    font-weight: 900;
+    color: yellow;
+}
+
+.todo {
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    border-radius: var(--radius);
+}
+
+.treinoA,
+.treinoB,
+.treinoC {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: var(--secondary-color);
+    width: 80%;
+    height: auto;
+    align-items: center;
+    margin-top: 50px;
+    box-shadow: 1px 1px 5px var(--secondary-color);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    border-radius: var(--radius);
+    padding: 10px 10px 10px 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.todo_list {
+    display: flex;
+    width: 100%;
+    margin: 10px;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: var(--radius);
+}
+
+.todo_item  {
+    display: flex;
+    width: 100%;
+    height: 25px;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px;
+    box-shadow: 1px 1px 5px var(--secondary-color);
+    border-radius: var(--radius);
+}
+
+.todo_item > div {
+    width: 80%;
+    text-align: center;
+}
+
+.todo_item:hover {
+    cursor: pointer;
+    transition: all .5s ease;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.todo_item > input[type='text'] {
+    border: none;
+    width: 80%;
+    font: inherit;
+    text-align: center;
+}
+
+.todo_item > input[type='button'],
+.todo_item > input[type='checkbox'] {
+    width: 30px;
+    height: 30px;
+    font: inherit;
+    color: red;
+    font-weight: bold;
+}
+
+.todo_item > input[type='checkbox']:checked  + div {
+    text-decoration: line-through;
+    color: green;
+}
+
+.todo_new-item{
+    display: flex;
+    background-color: var(--new-item-color);
+    opacity: 0.7;
+    border: none;
+    width: 80%;
+    height: 50px;
+    justify-content: space-evenly;
+    padding: 10px 0;
+    box-shadow: 1px 1px 5px var(--secondary-color);  
+    margin: 10px;
+    font: inherit;
+}
+
+.todo_new-item > input{
+    background-color: var(--new-item-color);
+    border: none;
+    width: 80%;
+    outline: none;
+    font: inherit;
+}
+
+.todo_new-item > input::placeholder {
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #262626;
+    text-align: left;
+    border-bottom: 10px solid RGB(40, 179, 75);
+    font-size: 11px;
+}
+
+.footer-text {
+    padding: 2px 10px;
+    text-align: center;
+    font-size: 11px;
+}
+
+
+@media (max-width: 700px), handheld and not (orientation: landscape) {
+
+    * {
+        font-family: 'Poppins', Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-weight: 100;
+    }
+
+    .todo {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .treinoA,
+    .treinoB,
+    .treinoC {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        background-color: var(--secondary-color);
+        width: 70%;
+        height: auto;
+        align-items: center;
+        margin-top: 20px;
+        box-shadow: 1px 1px 5px var(--secondary-color);
+        font-size: 1rem;
+        color: var(--primary-color);
+    }
+
+    .todo_list {
+        display: flex;
+        width: 100%;
+        margin: 10px;
+        flex-direction: column;
+        gap: 10px;
+        border-radius: var(--radius);
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        color: #262626;
+        text-align: left;
+        border-bottom: 10px solid RGB(40, 179, 75);
+        font-size: 11px;
+    }
+
+    .footer-relative {
+        position: relative;
+    }
+    
+    .footer-text {
+        padding: 2px 10px;
+        text-align: center;
+        font-size: 11px;
+    }
+}
