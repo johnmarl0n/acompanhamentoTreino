@@ -87,7 +87,7 @@ const atualizarTela = () => {
 const inserirTarefaA = (evento) => {
     const tecla = evento.keyCode || evento.which;
     const texto = evento.target.value;
-    if (tecla === 13 || tecla === 9) {
+    if ((texto) && (tecla === 13 || tecla === 9)) {
         const bancoDadosA = getBancoA();
         bancoDadosA.push ({'tarefa': texto, 'status': ''});
         setBancoA(bancoDadosA);
@@ -99,7 +99,7 @@ const inserirTarefaA = (evento) => {
 const inserirTarefaB = (evento) => {
     const tecla = evento.keyCode || evento.which;
     const texto = evento.target.value;
-    if (tecla === 13 || tecla === 9) {
+    if ((texto) && (tecla === 13 || tecla === 9)) {
         const bancoDadosB = getBancoB();
         bancoDadosB.push ({'tarefa': texto, 'status': ''});
         setBancoB(bancoDadosB);
@@ -111,8 +111,7 @@ const inserirTarefaB = (evento) => {
 const inserirTarefaC = (evento) => {
     const tecla = evento.keyCode || evento.which;
     const texto = evento.target.value;
-    console.log(tecla);
-    if (tecla === 13 || tecla === 9) {
+    if ((texto) && (tecla === 13 || tecla === 9)) {
         const bancoDadosC = getBancoC();
         bancoDadosC.push ({'tarefa': texto, 'status': ''});
         setBancoC(bancoDadosC);
