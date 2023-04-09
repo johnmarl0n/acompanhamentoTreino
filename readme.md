@@ -1,4 +1,4 @@
-# Título do Projeto
+# Acompanhamento de Treino
 
 [![Licença](https://img.shields.io/badge/Licença-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
