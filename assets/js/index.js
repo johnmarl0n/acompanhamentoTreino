@@ -84,6 +84,7 @@ const atualizarTela = () => {
     bancoDadosC.forEach( (item, indice) => criarItemC(item.tarefa, item.status, indice));
 }
 
+//Inserindo dados no Banco local
 const inserirTarefaA = (evento) => {
     const tecla = evento.keyCode || evento.which;
     const texto = evento.target.value;
@@ -120,10 +121,49 @@ const inserirTarefaC = (evento) => {
     }
 }
 
+//Inserindo dados no banco local para o botão +
+const btnInserirA = (evento) => {
+    const texto = document.getElementById('novoA').value;
+    if (texto) {
+        const bancoDadosA = getBancoA();
+        bancoDadosA.push ({'tarefa': texto, 'status': ''});
+        setBancoA(bancoDadosA);
+        atualizarTela();
+        evento.target.value = '';
+    }
+}
+
+const btnInserirB = (evento) => {
+    const texto = document.getElementById('novoB').value;
+    if (texto) {
+        const bancoDadosC = getBancoB();
+        bancoDadosB.push ({'tarefa': texto, 'status': ''});
+        setBancoB(bancoDadosB);
+        atualizarTela();
+        evento.target.value = '';
+    }
+}
+
+const btnInserirC = (evento) => {
+    const texto = document.getElementById('novoC').value;
+    if (texto) {
+        const bancoDadosC = getBancoC();
+        bancoDadosC.push ({'tarefa': texto, 'status': ''});
+        setBancoC(bancoDadosC);
+        atualizarTela();
+        evento.target.value = '';
+    }
+}
+
 //Alimentar banco local e atualizar tela
 document.getElementById('novoA').addEventListener('keydown', inserirTarefaA);
 document.getElementById('novoB').addEventListener('keydown', inserirTarefaB);
 document.getElementById('novoC').addEventListener('keydown', inserirTarefaC);
+
+//Chamar a função para o botão (gambiarra por causa do teclado android)
+document.getElementById('btnA').addEventListener('click', btnInserirA);
+document.getElementById('btnB').addEventListener('click', btnInserirB);
+document.getElementById('btnC').addEventListener('click', btnInserirC);
 
 //Remover o item selecionado
 const removerItemA = (indice) => {
