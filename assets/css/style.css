@@ -115,6 +115,7 @@ h3 {
     background-color: var(--new-item-color);
     opacity: 0.7;
     border: none;
+    border-radius: var(--radius);
     width: 80%;
     height: 50px;
     justify-content: space-evenly;
@@ -127,6 +128,7 @@ h3 {
 .todo_new-item > input{
     background-color: var(--new-item-color);
     border: none;
+    border-radius: var(--radius);
     width: 80%;
     outline: none;
     font: inherit;
@@ -136,6 +138,10 @@ h3 {
     font-style: italic;
     font-weight: normal;
     text-align: center;
+}
+
+button {
+    border-radius: var(--radius);
 }
 
 footer {

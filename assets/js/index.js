@@ -129,18 +129,18 @@ const btnInserirA = (evento) => {
         bancoDadosA.push ({'tarefa': texto, 'status': ''});
         setBancoA(bancoDadosA);
         atualizarTela();
-        evento.target.value = '';
+        document.getElementById('novoA').value = '';
     }
 }
 
 const btnInserirB = (evento) => {
     const texto = document.getElementById('novoB').value;
     if (texto) {
-        const bancoDadosC = getBancoB();
+        const bancoDadosB = getBancoB();
         bancoDadosB.push ({'tarefa': texto, 'status': ''});
         setBancoB(bancoDadosB);
         atualizarTela();
-        evento.target.value = '';
+        document.getElementById('novoB').value = '';
     }
 }
 
@@ -151,7 +151,7 @@ const btnInserirC = (evento) => {
         bancoDadosC.push ({'tarefa': texto, 'status': ''});
         setBancoC(bancoDadosC);
         atualizarTela();
-        evento.target.value = '';
+        document.getElementById('novoC').value = '';
     }
 }
 
